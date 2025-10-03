@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiper Project: Interactive Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .nav-link {
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #0d9488; /* teal-600 */
+            border-bottom-color: #0d9488;
+        }
+        .flowchart-node {
+            transition: all 0.3s ease;
+            border: 1px solid #cbd5e1; /* slate-300 */
+        }
+        .flowchart-arrow {
+            color: #94a3b8; /* slate-400 */
+        }
+        .code-block {
+            background-color: #1e293b; /* slate-800 */
+            color: #e2e8f0; /* slate-200 */
+            border-radius: 0.5rem;
+            padding: 1rem;
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background-color: #475569; /* slate-600 */
+            color: #f1f5f9; /* slate-100 */
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .copy-btn:hover {
+            background-color: #64748b; /* slate-500 */
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-4">
+                    <img src="img/Logo.png" alt="Wiper Logo" class="h-10 w-10">
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold text-slate-800">Wiper</span>
+                        <span class="text-xs font-light text-teal-700 -mt-1">"Clear The Next"</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#overview" class="nav-link font-medium text-slate-600 pb-1">Overview</a>
+                    <a href="#architecture" class="nav-link font-medium text-slate-600 pb-1">Architecture</a>
+                    <a href="#logic" class="nav-link font-medium text-slate-600 pb-1">Core Logic</a>
+                    <a href="#ui" class="nav-link font-medium text-slate-600 pb-1">UI/UX</a>
+                    <a href="#deployment" class="nav-link font-medium text-slate-600 pb-1">Deployment</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+
+        <div class="text-center mb-12">
+            <a href="#YOUR_CUSTOM_DOWNLOAD_LINK" 
+               class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-teal-600 hover:bg-teal-700 transition-colors duration-200 ease-in-out transform hover:scale-105"
+               target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Download Wiper Now (v1.0)
+            </a>
+        </div>
+        
+        <section id="overview" class="mb-16 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-slate-800 mb-2 text-center">Project Overview</h2>
+            <p class="max-w-3xl mx-auto text-center text-slate-600 mb-10">This guide outlines the development of "Wiper," a customizable utility for Windows 10/11 that automates the cleanup of temporary system files. Explore the sections below to understand its components, architecture, and deployment process.</p>
+                        <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-200">
+                <h3 class="text-xl font-semibold text-slate-800 mb-6 text-center">Key Technologies & Components</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="flex items-start space-x-4 p-4 rounded-lg bg-slate-50">
+                        <span class="text-3xl">🐍</span>
+                        <div>
+                            <h4 class="font-semibold">Python 3.x</h4>
+                            <p class="text-sm text-slate-500">The core language for system interaction and scripting logic.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-lg bg-slate-50">
+                        <span class="text-3xl">🖼️</span>
+                        <div>
+                            <h4 class="font-semibold">Tkinter / GUI</h4>
+                            <p class="text-sm text-slate-500">For building the native configuration UI and shutdown popups.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-lg bg-slate-50">
+                         <span class="text-3xl">⚙️</span>
+                        <div>
+                            <h4 class="font-semibold">OS & Shutil</h4>
+                            <p class="text-sm text-slate-500">Python libraries for file and folder management.</p>
+                        </div>
+                    </div>
+                     <div class="flex items-start space-x-4 p-4 rounded-lg bg-slate-50">
+                        <span class="text-3xl">📦</span>
+                        <div>
+                            <h4 class="font-semibold">PyInstaller</h4>
+                            <p class="text-sm text-slate-500">To package the Python scripts into a standalone .EXE file.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-lg bg-slate-50">
+                        <span class="text-3xl">🗓️</span>
+                        <div>
+                            <h4 class="font-semibold">Windows Task Scheduler</h4>
+                            <p class="text-sm text-slate-500">To trigger the cleanup script on system shutdown events.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 p-4 rounded-lg bg-slate-50">
+                        <span class="text-3xl">💾</span>
+                        <div>
+                            <h4 class="font-semibold">JSON Config</h4>
+                            <p class="text-sm text-slate-500">To save user settings and custom paths persistently.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture" class="mb-16 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-slate-800 mb-2 text-center">Application Architecture</h2>
+            <p class="max-w-3xl mx-auto text-center text-slate-600 mb-12">Wiper's core challenge is running a cleanup task during system shutdown. This is achieved through a clever integration with the Windows Task Scheduler, which listens for a specific system event. The diagram below illustrates this event-driven workflow.</p>
+
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-slate-200">
+                <div class="flex flex-col items-center justify-center space-y-4">
+                    <div class="flowchart-node bg-amber-50 text-amber-800 p-4 rounded-lg w-full max-w-sm text-center">
+                        <h4 class="font-semibold">1. User Initiates Shutdown/Restart</h4>
+                        <p class="text-sm">The process starts when the user clicks Shutdown or Restart in Windows.</p>
+                    </div>
+                    <div class="text-3xl flowchart-arrow">↓</div>
+                    <div class="flowchart-node bg-sky-50 text-sky-800 p-4 rounded-lg w-full max-w-sm text-center">
+                        <h4 class="font-semibold">2. Windows Logs Event ID: 1074</h4>
+                        <p class="text-sm">Windows logs this event to the System event log, signaling a shutdown process.</p>
+                    </div>
+                    <div class="text-3xl flowchart-arrow">↓</div>
+                     <div class="flowchart-node bg-indigo-50 text-indigo-800 p-4 rounded-lg w-full max-w-sm text-center">
+                        <h4 class="font-semibold">3. Task Scheduler Trigger</h4>
+                        <p class="text-sm">A pre-configured task detects Event 1074 and launches `wiper_trigger.exe`.</p>
+                    </div>
+                    <div class="text-3xl flowchart-arrow">↓</div>
+                    <div class="flowchart-node bg-teal-50 text-teal-800 p-4 rounded-lg w-full max-w-sm text-center">
+                        <h4 class="font-semibold">4. Wiper Popup Appears</h4>
+                        <p class="text-sm">The trigger script displays a modal popup, temporarily pausing the shutdown.</p>
+                    </div>
+                    <div class="text-3xl flowchart-arrow">↓</div>
+                    <div class="flex flex-col md:flex-row items-stretch justify-center w-full max-w-2xl gap-4">
+                        <div class="w-full text-center">
+                            <div class="flowchart-node bg-green-50 text-green-800 p-4 rounded-lg h-full">
+                                <h4 class="font-semibold">5a. User clicks "Clear & Shutdown"</h4>
+                                <p class="text-sm mt-2">The script calls the core cleaning logic and then re-issues the system shutdown command.</p>
+                            </div>
+                        </div>
+                        <div class="w-full text-center">
+                            <div class="flowchart-node bg-red-50 text-red-800 p-4 rounded-lg h-full">
+                                <h4 class="font-semibold">5b. User clicks "Cancel"</h4>
+                                <p class="text-sm mt-2">The script issues a shutdown abort command, and the system returns to normal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="logic" class="mb-16 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-slate-800 mb-2 text-center">Core Cleaning Logic</h2>
+            <p class="max-w-3xl mx-auto text-center text-slate-600 mb-12">The heart of Wiper is a Python script that safely deletes the *contents* of specified temporary folders. It avoids deleting the folders themselves to prevent permission issues. Click on a path below to see a conceptual code snippet.</p>
+            <div class="space-y-4">
+                <div class="accordion-item bg-white rounded-xl shadow-sm border border-slate-200">
+                    <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-2xl">👤</span>
+                            <div>
+                                <h3 class="font-semibold text-lg text-slate-800">%TEMP% (User)</h3>
+                                <p class="text-sm text-slate-500">Location for temporary files created by user applications.</p>
+                            </div>
+                        </div>
+                        <span class="accordion-icon text-2xl text-slate-400 transform transition-transform duration-300">›</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0">
+                           <div class="code-block"><pre><code>import os
+# Get path from environment variablesuser_temp_path = os.environ.get('TEMP')
+if user_temp_path and os.path.isdir(user_temp_path):    print(f"Cleaning user temp: {user_temp_path}")    # ... safe deletion logic for contents ...</code></pre>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item bg-white rounded-xl shadow-sm border border-slate-200">
+                     <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-2xl">💻</span>
+                            <div>
+                                <h3 class="font-semibold text-lg text-slate-800">Temp (Windows)</h3>
+                                <p class="text-sm text-slate-500">Location for temporary files created by the operating system.</p>
+                            </div>
+                        </div>
+                        <span class="accordion-icon text-2xl text-slate-400 transform transition-transform duration-300">›</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0">
+                           <div class="code-block"><pre><code>import os
+# Hardcoded, reliable pathwin_temp_path = r"C:\Windows\Temp"
+if os.path.isdir(win_temp_path):    print(f"Cleaning Windows temp: {win_temp_path}")    # ... safe deletion logic for contents ...</code></pre>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item bg-white rounded-xl shadow-sm border border-slate-200">
+                     <button class="accordion-header w-full flex justify-between items-center text-left p-6">
+                        <div class="flex items-center space-x-4">
+                            <span class="text-2xl">🚀</span>
+                             <div>
+                                <h3 class="font-semibold text-lg text-slate-800">Prefetch</h3>
+                                <p class="text-sm text-slate-500">Contains data to help speed up application launch times.</p>
+                            </div>
+                        </div>
+                        <span class="accordion-icon text-2xl text-slate-400 transform transition-transform duration-300">›</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-6 pt-0">
+                           <div class="code-block"><pre><code>import os
+# Hardcoded, reliable pathprefetch_path = r"C:\Windows\Prefetch"
+if os.path.isdir(prefetch_path):    print(f"Cleaning Prefetch: {prefetch_path}")    # ... safe deletion logic for contents ...</code></pre>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ui" class="mb-16 scroll-mt-24">
+            <h2 class="text-3xl font-bold text-slate-800 mb-2 text-center">UI/UX Mockups</h2>
+            <p class="max-w-3xl mx-auto text-center text-slate-600 mb-12">Wiper features two simple graphical interfaces: a main configuration panel for setting preferences and a modal dialog that appears during shutdown. Below are mockups representing their design and functionality.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <h3 class="text-xl font-semibold text-slate-800 mb-4 text-center">Configuration Panel</h3>
+                    <div class="w-full bg-slate-100 rounded-lg p-6 border border-slate-200">
+                        <div class="flex flex-col h-[400px]">
+                            <div class="flex items-center justify-center space-x-3 mb-4">
+                                <img src="img/Logo.png" alt="Wiper Logo" class="h-12 w-12">
+                                <h4 class="text-2xl font-bold text-slate-700">Wiper Settings</h4>
+                            </div>
+                            <div class="bg-white p-4 rounded flex-grow">
+                                <label class="block font-medium mb-2">Folders to Clean:</label>
+                                <div class="space-y-2 mb-4">
+                                    <div class="flex items-center"><input type="checkbox" checked class="h-4 w-4 rounded mr-2 accent-teal-600"><span>%TEMP% (User)</span></div>
+                                    <div class="flex items-center"><input type="checkbox" checked class="h-4 w-4 rounded mr-2 accent-teal-600"><span>C:\Windows\Temp</span></div>
+                                    <div class="flex items-center"><input type="checkbox" class="h-4 w-4 rounded mr-2 accent-teal-600"><span>Prefetch</span></div>
+                                </div>
+                                <label class="block font-medium mb-1">Custom Path:</label>
+                                <input type="text" placeholder="e.g., C:\Downloads\Temp" class="w-full p-2 border border-slate-300 rounded text-sm">
+                            </div>
+                            <button class="w-full bg-teal-600 text-white font-bold py-2 px-4 rounded-b-lg mt-4 hover:bg-teal-700 transition-colors">Save Settings</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <h3 class="text-xl font-semibold text-slate-800 mb-4 text-center">Shutdown Popup</h3>
+                    <div class="w-full bg-slate-800 rounded-lg p-6 border border-slate-700">
+                        <div class="flex flex-col h-[400px] items-center justify-center text-white">
+                           <img src="img/Logo.png" alt="Wiper Logo" class="h-24 w-24 mb-6">
+                           <h4 class="text-3xl font-bold text-center mb-2">Clear The Next?</h4>
+                           <p class="text-slate-300 text-center mb-8">Wiper is ready to clean temporary files.</p>
+                           <div class="w-full space-y-3">
+                                <button class="w-full bg-green-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-700 transition-colors">Clear Now & Shutdown</button>
+                                <button class="w-full bg-red-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-red-700 transition-colors">Cancel Shutdown</button>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="deployment" class="scroll-mt-24">
+            <h2 class="text-3xl font-bold text-slate-800 mb-2 text-center">Deployment & Packaging</h2>
+            <p class="max-w-3xl mx-auto text-center text-slate-600 mb-12">Once the Python scripts are complete, they must be packaged into executable files (`.exe`) and configured to run at shutdown. This involves using PyInstaller and setting up a task in the Windows Task Scheduler.</p>
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 md:p-8">
+                <h3 class="text-xl font-semibold text-slate-800 mb-2">Step 1: Package with PyInstaller</h3>
+                <p class="mb-4 text-slate-600">Run these commands in your terminal to create single-file, windowless executables for both the main app and the shutdown trigger. Make sure you have a `.ico` file for your logo.</p>
+                <div class="code-block mb-6">
+                    <button class="copy-btn">Copy</button><pre><code>pip install pyinstaller
+pyinstaller --onefile --windowed --icon=new.ico wiper_core.pypyinstaller --onefile --windowed --icon=new.ico wiper_trigger.py</code></pre>
+                </div>
+
+                <h3 class="text-xl font-semibold text-slate-800 mb-2">Step 2: Configure Task Scheduler</h3>
+                <p class="mb-4 text-slate-600">Create a new task that triggers on the shutdown event.</p>
+                <ul class="list-decimal list-inside space-y-2 text-slate-600">
+                    <li>Open Task Scheduler and select "Create Task...".</li>
+                    <li>Go to the <span class="font-semibold text-teal-700">Triggers</span> tab and click "New...".</li>
+                    <li>Set "Begin the task:" to <span class="font-semibold text-teal-700">On an event</span>.</li>
+                    <li>Configure the settings: Log: <span class="font-semibold">System</span>, Source: <span class="font-semibold">User32</span>, Event ID: <span class="font-semibold">1074</span>.</li>
+                    <li>Go to the <span class="font-semibold text-teal-700">Actions</span> tab, click "New...", and set the action to "Start a program".</li>
+                    <li>Browse to and select your compiled <span class="font-semibold">`wiper_trigger.exe`</span>.</li>
+                    <li>Save the task. Wiper is now active.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="text-center py-8 border-t border-slate-200 mt-12">
+        <p class="text-slate-500">Wiper Interactive Guide</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navigation scroll highlighting
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.toggle('active', link.getAttribute('href').substring(1) === entry.target.id);
+                        });
+                    }
+                });
+            }, { rootMargin: '-50% 0px -50% 0px' });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Accordion functionality
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const item = header.parentElement;
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.accordion-icon');
+
+                    item.classList.toggle('open');
+                    if (item.classList.contains('open')) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(90deg)';
+                    } else {
+                        content.style.maxHeight = '0';
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            // Copy-to-clipboard functionality
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const codeBlock = button.parentElement;
+                    const code = codeBlock.querySelector('pre code').innerText;
+                    navigator.clipboard.writeText(code).then(() => {
+                        button.innerText = 'Copied!';
+                        setTimeout(() => {
+                            button.innerText = 'Copy';
+                        }, 2000);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
