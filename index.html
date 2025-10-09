@@ -3,204 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WiperClean Utility</title>
+    <title>Bluering Utility Software | 4H4D Technologies</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
-    
-    <script>
-      mermaid.initialize({
-        startOnLoad: true,
-        flowchart: {
-          nodeSpacing: 50,
-          rankSpacing: 50
-        },
-        theme: 'dark', // Ensures theme matches the dark background
-        scale: 1.5 // Increased zoom/scale factor
-      });
-    </script>
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d1117; /* GitHub Dark Background */
+            background-color: #0d1117; /* Dark background matching GitHub dark theme */
             color: #c9d1d9; /* Light text */
+            scroll-behavior: smooth;
         }
-        /* Custom styling for the larger flowchart container */
-        .mermaid-container {
-            overflow-x: auto; /* Allows scrolling if the chart gets too wide */
-            padding-bottom: 20px; /* Space for the scrollbar */
+        .text-gradient {
+            background-image: linear-gradient(to right, #7928CA, #FF0080);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(162, 28, 117, 0.4); /* Shadow color based on gradient */
         }
     </style>
 </head>
-<body class="antialiased min-h-screen">
+<body class="antialiased">
 
-    <header class="p-4 border-b border-gray-700 shadow-xl bg-gray-900 sticky top-0 z-10">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-           <h1 class="text-3xl font-extrabold text-white flex items-center">
-    <img src="img/logobluering.png" alt="WiperClean Logo" class="h-6 w-6 mr-2" />
-    WiperClean
-</h1>
-            <nav class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="#features" class="hover:text-green-400 transition duration-300">Features</a>
-                <a href="#tech" class="hover:text-green-400 transition duration-300">Technology</a>
-                <a href="#flow" class="hover:text-green-400 transition duration-300">Logic Flow</a>
-                <a href="#chart" class="hover:text-green-400 transition duration-300">Flowchart</a>
-            </nav>
-        </div>
+    <header class="sticky top-0 z-50 bg-[#0d1117]/95 backdrop-blur-sm border-b border-[#21262d]">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="https://placehold.co/40x40/0d1117/FFFFFF?text=BR" onerror="this.onerror=null;this.src='uploaded:Logo bluering.png-531e7418-152d-4925-8a9f-7ea5d4f3cffd';" alt="Bluering Logo" class="h-8 w-8 rounded-full ring-2 ring-[#7928CA]">
+                <span class="text-xl font-extrabold text-white">Bluering</span>
+                <span class="text-xs text-gray-500 hidden sm:inline">by 4H4D Tech</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#features" class="hover:text-pink-500 transition duration-150">Features</a>
+                <a href="#requirements" class="hover:text-pink-500 transition duration-150">Requirements</a>
+                <a href="#showcase" class="hover:text-pink-500 transition duration-150">Showcase</a>
+            </div>
+
+            <a href="https://ahadtabc.github.io/Bluering/dist/Blueringo.exe" class="cta-button inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-[#7928CA] to-[#FF0080] shadow-lg shadow-pink-500/20">
+                Download Now
+            </a>
+        </nav>
     </header>
 
-    <section class="py-20 text-center px-4 bg-gray-800 border-b border-gray-700">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-white">
-                Effortless System Cleanup & Optimization.
-            </h2>
-            <p class="text-xl text-gray-400 mb-8">
-                The lightweight Python utility designed to safely clear temporary files, cache, and optimize your Windows startup with a modern, simple interface.
+    <main>
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-28 text-center">
+            <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight mb-4">
+                <span class="block text-white">Optimize Your System.</span>
+                <span class="block text-gradient">Simplify Your Digital Life.</span>
+            </h1>
+            <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-400">
+                Bluering is the essential utility software by 4H4D Technologies for safe registry operations, real-time logging, and advanced network diagnostics.
             </p>
-            <div class="space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="dist/Blueringo.exe" class="inline-block px-8 py-3 bg-green-500 text-white font-bold rounded-full shadow-lg hover:bg-green-600 transition duration-300 transform hover:scale-105">
-                    Download WiperClean (v1.0)
+            <div class="mt-10 flex justify-center space-x-4">
+                <a href="https://ahadtabc.github.io/Bluering/dist/Blueringo.exe" class="cta-button inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-xl text-white bg-gradient-to-r from-[#7928CA] to-[#FF0080] shadow-2xl shadow-pink-500/40 transform hover:scale-[1.02] transition duration-300">
+                    Download Bluering (Standard)
                 </a>
-                <a href="#features" class="inline-block px-8 py-3 bg-gray-700 text-gray-300 font-semibold rounded-full hover:bg-gray-600 transition duration-300">
-                    See Features
+                <a href="https://ahadtabc.github.io/Bluering/dist/BlueringoL.exe" class="cta-button inline-flex items-center justify-center px-8 py-4 border border-pink-500 text-base font-medium rounded-xl text-pink-500 bg-transparent hover:bg-pink-500/10 transition duration-300">
+                    Download Bluering (Lite)
                 </a>
             </div>
-        </div>
-    </section>
+            <div class="mt-16 w-full max-w-4xl mx-auto p-4 bg-[#161b22] border border-[#21262d] rounded-2xl shadow-2xl shadow-blue-500/10">
+                <img src="https://placehold.co/1000x500/161b22/8b949e?text=Bluering+Main+UI" onerror="this.onerror=null;this.src='uploaded:Screenshot Bluering (1).png-de090727-448c-40e2-92e9-6af0d85f0299';" alt="Bluering Software Main User Interface Screenshot" class="rounded-xl border border-[#30363d]">
+            </div>
+        </section>
 
-    <section id="features" class="py-16 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h3 class="text-4xl font-bold text-center mb-12 text-white">Key Features</h3>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-900 p-6 rounded-xl shadow-xl border border-gray-700 hover:border-green-400 transition duration-300">
-                    <div class="text-green-400 mb-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" /></svg>
+        <section id="features" class="py-24 bg-[#0d1117] border-t border-[#21262d]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-3xl sm:text-4xl font-extrabold text-white mb-16">
+                    Powerful Utilities at Your Fingertips
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <div class="p-6 bg-[#161b22] rounded-xl border border-[#21262d] shadow-lg hover:shadow-blue-500/10 transition duration-300">
+                        <div class="text-gradient mb-4">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Safe Registry Operations</h3>
+                        <p class="text-gray-400 text-sm">Perform safe **Registry Backup & Restore** operations, along with simulation functions to test changes before application.</p>
                     </div>
-                    <h4 class="text-xl font-semibold mb-2 text-white">Targeted System Cleanup</h4>
-                    <p class="text-gray-400">Safely wipe files from essential, high-volume cleanup zones: **User Temp Files**, **System Cache (Temp)**, and **Prefetch** folders. Requires admin privileges for system-level paths.</p>
-                </div>
-                <div class="bg-gray-900 p-6 rounded-xl shadow-xl border border-gray-700 hover:border-green-400 transition duration-300">
-                    <div class="text-green-400 mb-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+
+                    <div class="p-6 bg-[#161b22] rounded-xl border border-[#21262d] shadow-lg hover:shadow-blue-500/10 transition duration-300">
+                        <div class="text-gradient mb-4">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Real-Time System Log</h3>
+                        <p class="text-gray-400 text-sm">Monitor all application activities, operations, and quickly diagnose errors via a dedicated, read-only log console.</p>
                     </div>
-                    <h4 class="text-xl font-semibold mb-2 text-white">Custom Directory Wiping</h4>
-                    <p class="text-gray-400">Specify any custom folder path on your drive for deep cleaning. The utility ensures that the folder itself remains intact while securely deleting all its contents.</p>
-                </div>
-                <div class="bg-gray-900 p-6 rounded-xl shadow-xl border border-gray-700 hover:border-green-400 transition duration-300">
-                    <div class="text-green-400 mb-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+
+                    <div class="p-6 bg-[#161b22] rounded-xl border border-[#21262d] shadow-lg hover:shadow-blue-500/10 transition duration-300">
+                        <div class="text-gradient mb-4">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Network Speed Test</h3>
+                        <p class="text-gray-400 text-sm">Perform accurate, non-blocking internet speed tests (Download, Upload, Ping) and view detailed adapter information (using psutil).</p>
                     </div>
-                    <h4 class="text-xl font-semibold mb-2 text-white">Startup Management & Aesthetics</h4>
-                    <p class="text-gray-400">Toggle application launch at Windows startup using the **Registry**. Easily switch between **Dark/Light Mode** for comfortable use in any environment.</p>
+                    
+                    <div class="p-6 bg-[#161b22] rounded-xl border border-[#21262d] shadow-lg hover:shadow-blue-500/10 transition duration-300">
+                        <div class="text-gradient mb-4">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0011.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Dark & Light Mode</h3>
+                        <p class="text-gray-400 text-sm">The modern customtkinter interface allows you to switch appearance modes instantly to match your workspace environment.</p>
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <section id="tech" class="py-16 px-4 bg-gray-900 border-t border-b border-gray-700">
-        <div class="max-w-6xl mx-auto">
-            <h3 class="text-4xl font-bold text-center mb-12 text-white">Built with Modern Python</h3>
-            <div class="grid md:grid-cols-2 gap-10 items-center">
+        </section>
+
+        <section id="requirements" class="py-24 bg-[#161b22] border-t border-b border-[#21262d]">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-3xl sm:text-4xl font-extrabold text-white mb-10">
+                    System Requirements & Setup
+                </h2>
+                <p class="text-lg text-gray-400 text-center mb-12">
+                    Bluering is built on a robust Python framework. Please ensure the following prerequisites are met for a smooth installation and operation.
+                </p>
+
+                <div class="space-y-8">
+                    <div class="p-6 bg-[#0d1117] rounded-xl border border-[#30363d] shadow-lg">
+                        <h3 class="text-2xl font-bold text-gradient mb-2">1. Python Environment</h3>
+                        <p class="text-gray-300 mb-3">Bluering requires **Python 3.x** (latest stable version recommended).</p>
+                        <ul class="list-disc list-inside text-gray-400 space-y-1 ml-4">
+                            <li>Download: <a href="https://www.python.org/downloads/" target="_blank" class="text-blue-400 hover:text-blue-300 underline">https://www.python.org/downloads/</a></li>
+                            <li class="font-bold text-red-400">IMPORTANT: During installation, you MUST check the **"Add Python to PATH"** box.</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-6 bg-[#0d1117] rounded-xl border border-[#30363d] shadow-lg">
+                        <h3 class="text-2xl font-bold text-gradient mb-4">2. Required Python Packages</h3>
+                        <p class="text-gray-300 mb-4">These modules must be installed via **pip** using an Administrative Command Prompt:</p>
+                        
+                        <div class="bg-[#21262d] p-4 rounded-lg overflow-x-auto text-sm">
+                            <code class="text-green-400 block whitespace-pre">
+                                pip install customtkinter psutil wmi speedtest-cli pystray pillow pywin32
+                            </code>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-3">
+                            <span class="text-yellow-500 font-semibold">Note:</span> If running from a provided executable, these steps may be optional, but are necessary for running the source code (`Main_Code REG SIMU.py`).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="showcase" class="py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-center text-3xl sm:text-4xl font-extrabold text-white mb-16">
+                    See Bluering in Action
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-4 bg-[#161b22] rounded-xl border border-[#21262d] shadow-xl">
+                        <img src="https://placehold.co/800x450/161b22/8b949e?text=Screenshot+1" onerror="this.onerror=null;this.src='uploaded:Screenshot Bluering (1).png-de090727-448c-40e2-92e9-6af0d85f0299';" alt="Bluering Main Screen" class="w-full h-auto rounded-lg border border-[#30363d]">
+                        <p class="mt-3 text-center text-gray-400 text-sm">Main Utility Dashboard View</p>
+                    </div>
+                    <div class="p-4 bg-[#161b22] rounded-xl border border-[#21262d] shadow-xl">
+                        <img src="https://placehold.co/800x450/161b22/8b949e?text=Screenshot+2" onerror="this.onerror=null;this.src='uploaded:Screenshot Bluering (2).png-260e0e6a-f2ec-40cf-ab11-8ef727865803';" alt="Bluering Network Diagnostics" class="w-full h-auto rounded-lg border border-[#30363d]">
+                        <p class="mt-3 text-center text-gray-400 text-sm">Network Diagnostics and Speed Test</p>
+                    </div>
+                    <div class="p-4 bg-[#161b22] rounded-xl border border-[#21262d] shadow-xl">
+                        <img src="https://placehold.co/800x450/161b22/8b949e?text=Screenshot+3" onerror="this.onerror=null;this.src='uploaded:Screenshot Bluering (3).png-2669d2ae-5fb1-43b4-b942-01616af33fa4';" alt="Bluering Settings Panel" class="w-full h-auto rounded-lg border border-[#30363d]">
+                        <p class="mt-3 text-center text-gray-400 text-sm">Customization and Configuration Settings</p>
+                    </div>
+                    <div class="p-4 bg-[#161b22] rounded-xl border border-[#21262d] shadow-xl">
+                        <img src="https://placehold.co/800x450/161b22/8b949e?text=Screenshot+4" onerror="this.onerror=null;this.src='uploaded:Screenshot Bluering (4).png-34c0e7a9-5898-403c-89be-80d7598c30be';" alt="Bluering Log View" class="w-full h-auto rounded-lg border border-[#30363d]">
+                        <p class="mt-3 text-center text-gray-400 text-sm">Real-Time Activity and Error Logging</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="py-20 bg-[#0d1117] border-t border-[#21262d]">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
+                    Get Bluering Today
+                </h2>
+                <p class="text-xl text-gray-400 mb-8">
+                    Start simplifying your system management and gain deeper diagnostic insights now.
+                </p>
+                <a href="https://ahadtabc.github.io/Bluering/dist/Blueringo.exe" class="cta-button inline-flex items-center justify-center px-10 py-5 border border-transparent text-lg font-bold rounded-xl text-white bg-gradient-to-r from-[#7928CA] to-[#FF0080] shadow-2xl shadow-pink-500/40 transform hover:scale-[1.05] transition duration-300">
+                    DOWNLOAD BLUERING UTILITY
+                </a>
+                <p class="mt-4 text-gray-500 text-sm">Version X.X | Windows OS Required</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#161b22] border-t border-[#21262d]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+                
                 <div>
-                    <p class="text-gray-400 text-lg mb-6">
-                        WiperClean is a lean utility built entirely with **Python**. We chose the high-performance **CustomTkinter** framework to deliver a native, feature-rich graphical user interface (GUI) without the heavy resource footprint of web-based applications.
-                    </p>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex items-center">
-                            <span class="text-green-400 mr-2 font-bold">✓</span> **Windows Registry Integration:** Manages startup keys using the native `winreg` library.
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-green-400 mr-2 font-bold">✓</span> **Privilege Checking:** Uses `ctypes` to ensure critical system cleans are only attempted with **Administrator** rights.
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-green-400 mr-2 font-bold">✓</span> **Safe Deletion Logic:** Utilizes `os` and `shutil` for content removal while maintaining folder integrity, preventing system errors.
-                        </li>
+                    <h4 class="font-bold text-white mb-3">4H4D Technologies</h4>
+                    <p class="text-gray-400">Developing innovative utility software for system optimization and maintenance.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-3">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-pink-500 transition duration-150">Features</a></li>
+                        <li><a href="#requirements" class="text-gray-400 hover:text-pink-500 transition duration-150">Requirements</a></li>
+                        <li><a href="#download" class="text-gray-400 hover:text-pink-500 transition duration-150">Download</a></li>
                     </ul>
                 </div>
-                <div class="bg-black p-6 rounded-xl text-sm overflow-x-auto shadow-2xl">
-                    <pre class="text-gray-300 whitespace-pre-wrap">
-# Code Snippet for Icon Setup (Critical for Application Identity)
-try:
-    # Sets the application window icon
-    self.iconbitmap("icon file.ico")
-except Exception as e:
-    print(f"Warning: Could not set icon. Error: {e}")
 
-# Admin Check for cleaning system paths
-def _is_admin(self):
-    try:
-        return ctypes.windll.shell32.IsUserAnAdmin()
-    except:
-        return False
-                    </pre>
+                <div>
+                    <h4 class="font-bold text-white mb-3">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition duration-150">Contact Us (Placeholder)</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition duration-150">FAQ (Placeholder)</a></li>
+                    </ul>
                 </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-3">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition duration-150">Privacy Policy (Placeholder)</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition duration-150">Terms of Service (Placeholder)</a></li>
+                    </ul>
+                </div>
+
             </div>
-        </div>
-    </section>
 
-    <section id="flow" class="py-16 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h3 class="text-4xl font-bold text-center mb-12 text-white">How The Cleanup Logic Works</h3>
-            <div class="bg-gray-800 p-6 rounded-xl shadow-2xl border border-gray-700">
-                <p class="text-gray-400 mb-4">The cleanup process is structured to prioritize safety and permissions:</p>
-                <ol class="space-y-4 text-left text-gray-300">
-                    <li class="border-l-4 border-green-500 pl-4">
-                        <span class="font-bold text-lg text-white">Step 1: Privilege Check</span>
-                        <p class="text-sm">The utility first determines if it is running with Administrator privileges. This is crucial as system-wide paths like Prefetch cannot be accessed otherwise.</p>
-                    </li>
-                    <li class="border-l-4 border-green-500 pl-4">
-                        <span class="font-bold text-lg text-white">Step 2: System Path Iteration</span>
-                        <p class="text-sm">It loops through enabled system items (Temp, Cache, Prefetch). If an item requires admin and the check fails, the item is safely **skipped** and logged with a warning.</p>
-                    </li>
-                    <li class="border-l-4 border-green-500 pl-4">
-                        <span class="font-bold text-lg text-white">Step 3: Safe Directory Cleaning</span>
-                        <p class="text-sm">The `_clean_directory` function is called. This function iterates through every file and folder *inside* the target path and deletes them individually, ensuring the root folder itself is never deleted, which prevents system instability.</p>
-                    </li>
-                    <li class="border-l-4 border-green-500 pl-4">
-                        <span class="font-bold text-lg text-white">Step 4: Custom Path Execution</span>
-                        <p class="text-sm">If a Custom Path is entered, the **same safe cleaning logic** is applied to its contents for complete data removal from user-specified locations.</p>
-                    </li>
-                </ol>
+            <div class="mt-10 pt-6 border-t border-[#30363d] text-center text-xs text-gray-500">
+                &copy; 2024 4H4D Technologies. All Rights Reserved. Bluering is a trademark of 4H4D Technologies.
             </div>
-        </div>
-    </section>
-
-    <section id="chart" class="py-16 px-4">
-      <div class="max-w-7xl mx-auto text-center">
-        <h3 class="text-4xl font-bold text-center mb-12 text-white">Process Flowchart</h3>
-        <p class="text-gray-400 mb-8">This flowchart illustrates the main cleanup logic of the application:</p>
-
-        <div class="bg-gray-900 p-8 rounded-xl shadow-2xl border border-gray-700 text-left max-w-full mx-auto mermaid-container">
-            <div class="mermaid">
-                graph TD
-                    Start(Start Application) --> PrivilegeCheck{Is Administrator?}
-                    PrivilegeCheck -- Yes --> CleanSystem[Clean System Cache & Prefetch]
-                    PrivilegeCheck -- No --> SkipAdmin[Skip Admin-only Cleanup]
-                    
-                    CleanSystem --> CleanUser[Clean User Temporary Files]
-                    SkipAdmin --> CleanUser
-                    
-                    CleanUser --> CustomPathCheck{Custom Path Selected?}
-                    CustomPathCheck -- Yes --> CleanCustom[Clean Custom Folder Contents]
-                    CustomPathCheck -- No --> EndProcess[Cleanup Complete]
-                    
-                    CleanCustom --> EndProcess
-            </div>
-        </div>
-        <p class="mt-8 text-green-400"><em>Flow summarizes privilege validation, cleanup task skipping, and custom folder handling.</em></p>
-      </div>
-    </section>
-
-    <footer class="mt-16 py-8 border-t border-gray-700 bg-gray-900">
-        <div class="max-w-6xl mx-auto text-center text-sm text-gray-500">
-            <p>&copy; 2025 WiperClean Utility Project. All rights reserved.</p>
-            <p class="mt-2">Developed with Python, CustomTkinter, and a commitment to speed.</p>
         </div>
     </footer>
 
 </body>
 </html>
-
-
